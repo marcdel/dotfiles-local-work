@@ -1,0 +1,6 @@
+UnPlug 'fatih/vim-go'
+UnPlug 'kchmck/vim-coffee-script'
+UnPlug 'slim-template/vim-slim'
+
+Plug 'slashmili/alchemist.vim'
+Plug 'neomake/neomake'

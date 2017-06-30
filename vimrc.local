@@ -1,10 +1,10 @@
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+" Run Neomake when I save any buffer
+augroup localneomake
+  autocmd! BufWritePost * Neomake
+augroup END
+
 highlight colorcolumn ctermbg=235
 let g:ctrlp_map = '<leader>p'
-
-" Plug and Unplug
-UnPlug 'fatih/vim-go'
-UnPlug 'kchmck/vim-coffee-script'
-UnPlug 'slim-template/vim-slim'
-
-Plug 'slashmili/alchemist.vim'
