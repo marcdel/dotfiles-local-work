@@ -2,4 +2,7 @@
 
 brew bundle --file=- <<EOF
 brew "tree"
+brew "jq"
+brew "wget"
+brew "ripgrep"
 EOF

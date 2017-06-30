@@ -1,2 +1,8 @@
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 highlight colorcolumn ctermbg=235
+let g:ctrlp_map = '<leader>p'
+
+" Plug and Unplug
+UnPlug 'fatih/vim-go'
+UnPlug 'kchmck/vim-coffee-script'
+UnPlug 'slim-template/vim-slim'
