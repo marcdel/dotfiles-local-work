@@ -4,3 +4,4 @@ UnPlug 'slim-template/vim-slim'
 
 Plug 'slashmili/alchemist.vim'
 Plug 'neomake/neomake'
+Plug 'tomasr/molokai'

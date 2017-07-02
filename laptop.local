@@ -6,10 +6,16 @@ brew "tree"
 brew "jq"
 brew "wget"
 brew "ripgrep"
+brew "neovim"
 EOF
 
-# Elixir Version Manager (kiex)
+# Elixir / Phoenix Setup
 \curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s
 source ~/.kiex/scripts/kiex
 kiex install 1.5.0-rc.0
 kiex use 1.5.0-rc.0
+mix local.hex --force
+mix local.rebar --force
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
+psql postgres -c 'CREATE USER postgres SUPERUSER;'
