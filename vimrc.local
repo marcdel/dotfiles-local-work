@@ -1,12 +1,20 @@
+let g:ctrlp_map = '<leader>p'
+
 " Make the line showing max length grey.
 highlight colorcolumn ctermbg=235
-
-let g:ctrlp_map = '<leader>p'
 
 set background=dark
 colorscheme molokai
 syntax enable
 set title
+set foldmethod=syntax
+set foldlevelstart=20
+
+map <leader>ev :e ~/dotfiles-local/vimrc.local<CR>
+map <leader>sv :source ~/.vimrc<CR>
+
+" Alchemist
+let g:alchemist_iex_term_split = 'split'
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -16,23 +24,32 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs=1
+" let g:syntastic_debug = 33
+let g:syntastic_debug_file = "/tmp/syntastic.log"
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-" let g:syntastic_elixir_checkers = ['mix']
+let g:syntastic_elixir_checkers = ['elixir']
+let g:syntastic_elixir_elixir_exe = 'mix credo list'
+let g:syntastic_enable_elixir_checker = 0
 
 " Neomake
 let g:neomake_logfile = '/tmp/neomake.log'
-g:neomake_open_list = 1
+let g:neomake_open_list = 1
+:highlight NeomakeWarningColor ctermfg=227 ctermbg=white
+:highlight NeomakeErrorColor ctermfg=203 ctermbg=white
+let g:neomake_warning_sign={'text': 'W', 'texthl': 'NeomakeWarningColor'}
+let g:neomake_warning_sign={'text': 'X', 'texthl': 'NeomakeErrorColor'}
 
 augroup neomake
   autocmd! BufWritePost * Neomake
 augroup END
 
-" let g:neomake_markdown_enabled_makers = []
 " let g:neomake_elixir_enabled_makers = ['mix']
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+" let g:neomake_elixir_enabled_makers = ['mix', 'mycredo']
 
 " Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
-let g:neomake_elixir_enabled_makers = ['mix', 'mycredo']
 function! NeomakeCredoErrorType(entry)
   if a:entry.type ==# 'F'      " Refactoring opportunities
     let l:type = 'W'
