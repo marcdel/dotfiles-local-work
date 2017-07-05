@@ -1,5 +1,5 @@
 # Aliases
-alias edit=nvim
+alias edit=vim
 
 # Prompt
 setopt prompt_subst

@@ -22,19 +22,22 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
 " let g:syntastic_debug = 33
 let g:syntastic_debug_file = "/tmp/syntastic.log"
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_elixir_checkers = ['elixir']
+let g:syntastic_elixir_elixir_exe = 'mix compile --warnings-as-errors'
+let g:syntastic_enable_elixir_checker = 1
 
 " Neomake
 let g:neomake_logfile = '/tmp/neomake.log'
-let g:neomake_open_list = 1
-:highlight NeomakeWarningColor ctermfg=227 ctermbg=white
-:highlight NeomakeErrorColor ctermfg=203 ctermbg=white
+let g:neomake_open_list = 0
+:highlight NeomakeWarningColor ctermfg=227 ctermbg=237
+:highlight NeomakeErrorColor ctermfg=203 ctermbg=237
 let g:neomake_warning_sign={'text': 'W', 'texthl': 'NeomakeWarningColor'}
 let g:neomake_error_sign={'text': 'X', 'texthl': 'NeomakeErrorColor'}
 
@@ -42,4 +45,5 @@ augroup neomake
   autocmd! BufWritePost * Neomake
 augroup END
 
-let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+" let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+let g:neomake_elixir_enabled_makers = ['credo']
