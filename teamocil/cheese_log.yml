@@ -1,0 +1,11 @@
+windows:
+  - name: editor
+    root: ~/Code/solid-af/cheese_log
+    panes:
+      - edit
+  - name: terminal
+    root: ~/Code/solid-af/cheese_log
+    layout: even-horizontal
+    panes:
+      - git status
+      - mix phx.server
