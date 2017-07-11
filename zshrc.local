@@ -21,7 +21,7 @@ precmd () { vcs_info }
 PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
 
 # Elixir Version Manager (kiex)
-source $HOME/.kiex/elixirs/elixir-1.5.0-rc.0.env
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
 
 # Up arrow cycles through commands that begin with whatever you typed
 autoload -Uz up-line-or-beginning-search
