@@ -1,0 +1,6 @@
+# fn delete
+bindkey "^[[3~" delete-char
+
+# fn left / right
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
