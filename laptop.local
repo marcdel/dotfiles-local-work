@@ -22,3 +22,4 @@ psql postgres -c 'CREATE USER postgres SUPERUSER;'
 
 # Teamocil
 gem install teamocil
+gem install pry
