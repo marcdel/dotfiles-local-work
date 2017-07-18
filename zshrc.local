@@ -35,3 +35,14 @@ bindkey '\e[B' down-line-or-beginning-search
 
 # Case  insensitive tab completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Prepare environment for ep work
+source ~/Code/ep/ep-api/.env
+
+# Export test env variables for ~/Code/ep/ep-ui/bin/ci.sh
+export SERVICE_NAME=ep-ui
+export BUILD_NUMBER=1
+
+# NVM
+export NVM_DIR="/Users/mdelagrammatikas/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
